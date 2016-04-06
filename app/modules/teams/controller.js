@@ -33,9 +33,17 @@ class TeamsController {
 
 	constructor($http) {
     this._$http = $http;
+		this.name = "";
+
+
 	}
 
   addCharacter() {
+		this._$http
+		.get(`http://gateway.marvel.com:80/v1/public/characters?name=${this.name}&apikey=1c51377e8242564595ee97800ae287c7>`)
+		.then((response) => {
+			console.log(response);
+		});
   }
 
   deleteCharacter(character) {
