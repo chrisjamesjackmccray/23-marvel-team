@@ -26,6 +26,7 @@ function config($stateProvider, $urlRouterProvider) {
     controller: 'teamsController as teamsCtrl',
     template: require('./view.html')
   });
+
 }
 
 export default config;
