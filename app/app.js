@@ -21,6 +21,13 @@ let App = angular.module('app', ['ui.router', 'tiy.teams']);
 */
 
 function config($stateProvider, $urlRouterProvider) {
+  .state('teams', {
+    url: '/',
+    controller: 'teamsController as teamsCtrl',
+    template: require('./view.html')
+  });
 }
+
+export default config;
 
 App.config(config);
