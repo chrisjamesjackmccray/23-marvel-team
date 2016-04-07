@@ -34,19 +34,22 @@ class TeamsController {
 	constructor($http) {
     this._$http = $http;
 		this.name = "";
-
-
+		this.characters = [];
 	}
 
   addCharacter() {
 		this._$http
-		.get(`http://gateway.marvel.com:80/v1/public/characters?name=${this.name}&apikey=1c51377e8242564595ee97800ae287c7>`)
+		.get(`http://gateway.marvel.com:80/v1/public/characters?name=${this.name}&apikey=1c51377e8242564595ee97800ae287c7`)
 		.then((response) => {
 			console.log(response);
+			let character = new Character(response.data.data.results[0].name, response.data.data.results[0].description, `${response.data.data.results[0].thumbnail.path}.${response.data.data.results[0].thumbnail.extension}`);
+			this.characters.push(character);
 		});
+
   }
 
   deleteCharacter(character) {
+		this.characters.splice(this.characters.indexOf(characters), 1);   
   }
 
 }

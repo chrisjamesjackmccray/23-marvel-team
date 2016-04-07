@@ -1,8 +1,24 @@
-<form>
+<form ng-hide="characterCtrl.characters.length >= 6">
   <input type="text" placeholder="teams">
-  <input type="submit" value="Add teams">
+  <input type="submit" value="Add teams" ng-click="characterCtrl.addCharacter()">
 </form>
 
 
 
-<h1></h1>
+<h1>Your Team ({{ characterCtrl.characters.length }}/6)</h1>
+
+<table>
+  <tbody>
+    <tr ng-repeat="characters in characterCtrl.characters">
+      <td>
+        {{ character.name }}
+      </td>
+      <td>
+        <img ng-src="{{ characterCtrl.image }}">
+      </td>
+      <td>
+        {{ characterCtrl.description }}
+      </td>
+    </tr>
+  </tbody>
+</table>
