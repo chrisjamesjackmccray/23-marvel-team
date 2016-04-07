@@ -38,6 +38,7 @@ class TeamsController {
 	}
 
   addCharacter() {
+		console.log("adding")
 		this._$http
 		.get(`http://gateway.marvel.com:80/v1/public/characters?name=${this.name}&apikey=1c51377e8242564595ee97800ae287c7`)
 		.then((response) => {
@@ -49,7 +50,12 @@ class TeamsController {
   }
 
   deleteCharacter(character) {
-		this.characters.splice(this.characters.indexOf(characters), 1);   
+		let confirmed = confirm(`Are you sure you want to delete ${character.name}?`);
+
+		if (confirmed) {
+			this.characters.splice(this.characters.indexOf(character), 1);
+		}
+
   }
 
 }
