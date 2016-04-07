@@ -5,10 +5,10 @@
 
   <form ng-hide="teamCtrl.characters.length >= 6">
     <input type="text" placeholder="teams" ng-model="teamCtrl.name">
-    <input type="submit" value="Add teams" ng-click="teamCtrl.addCharacter()">
+    <input type="submit" value="Add" ng-click="teamCtrl.addCharacter()">
   </form>
 
-  <h2> Characters </h2>
+  <h2 class="char"> Characters </h2>
 
   <table>
     <tbody>
@@ -19,7 +19,7 @@
           <img class ="image" ng-src="{{ character.image }}">
         </td>
 
-        <td class="nametd">
+        <td class="des">
           {{ character.name }}
         </td>
 
@@ -30,7 +30,7 @@
 
 
 
-        <td>
+        <td class="ex">
           <i class="fa fa-times-circle" ng-click="teamCtrl.deleteCharacter(character)"></i>
         </td>
       </tr>

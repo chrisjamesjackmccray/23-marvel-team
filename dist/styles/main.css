@@ -5,14 +5,35 @@ body {
   width: 700px;
   margin: 0 auto; }
 
+.char {
+  font-size: 2rem;
+  font-weight: 900; }
+
 .image {
   width: 200px;
-  border: 2px solid black; }
-
-.nametd {
-  text-transform: capitalize;
-  padding: 0 0 0 0;
+  border: 2px solid black;
   margin: 0 0 0 0; }
+
+.imagetd {
+  padding: 0 0 40px 0; }
+
+.des {
+  position: absolute;
+  text-decoration: none;
+  font-size: 2rem;
+  margin: 0 0 0 10px;
+  font-weight: 900; }
+
+.ex {
+  position: absolute;
+  width: 20px; }
+
+.fa.fa-times-circle {
+  color: #DC143C;
+  font-size: 2rem; }
+
+.descriptiontd {
+  padding: 10px 0 0 10px; }
 
 body {
   font-face: Helvetica;
